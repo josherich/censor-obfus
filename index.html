@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>敏感词混淆替换</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        font-size: 18px;
+        text-align: center;
+      }
+      #input_text {
+        font-size: 18px;
+        display: block;
+        width: 900px;
+        margin: auto;
+        margin-top: 40px;
+      }
+      #output_text {
+        text-align: left;
+        width: 900px;
+        margin: auto;
+        margin-top: 40px;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+
+  <body class="">
+
+    <a href="https://github.com/dchrzty/censor-obfus"><img style="position: absolute; top: 0; left: 0; border: 0;z-index: 10;cursor: pointer;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <textarea name="" id="input_text" cols="30" rows="10"></textarea>
+
+    <div id="output_text"></div>
+
+    <script type="text/javascript" src="./pinyin_dict_withtone.js"></script>
+    <script type="text/javascript" src="./pinyin_dict_notone.js"></script>
+    <script type="text/javascript" src="./pinyinUtil.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+
+    <script>
+    let demo = "政制及内地事务局局长聂德权称中央领导人皆肯定香港一国两制，大湾区规划正是利用香港此优势。至于文件上的字句是拮取《规划纲要》的重点，他认为跟一国两制无关。杨岳桥再追问：“如何确保今次粤港澳大湾区计划与以往的9+2、泛珠三角讲了不再存在的这些假大空规划，如何确保今次是真的我们可以信的。”"
+          document.querySelector('#input_text').value = demo
+          window.setTimeout(function() {
+            let res = filter(demo)
+            document.querySelector('#output_text').textContent = res
+          }, 2000)
+          
+      document.querySelector('#input_text').addEventListener('keyup', function(e) {
+        let res = filter(e.target.value)
+        document.querySelector('#output_text').textContent = res
+      })
+    </script>
+
+  </body>
+</html>
