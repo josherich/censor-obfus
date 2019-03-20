@@ -1,4 +1,5 @@
 let map = {}
+let pairs = {}
 let polyphone = false
 let anchor = ''
 
@@ -27,7 +28,7 @@ function addWord(word) {
 
 function filter(s, cb) {
   let parent = map
-
+  pairs = {}
   for (let i = 0; i < s.length; i++) {
     if (s[i] == '*') {
       continue
@@ -77,7 +78,9 @@ function filter(s, cb) {
       }
       subs[i] = res
     }
-
+    if (sWord != subs.join('')) {
+      pairs[sWord] = [sWord, subs.join('')]
+    }
     subs = anchor + subs.join('') + anchor
 
     let reg = new RegExp(sWord, 'g')
@@ -89,5 +92,8 @@ function filter(s, cb) {
     cb(null, s)
   }
 
-  return s
+  return {
+    text: s,
+    pairs: pairs
+  }
 }
