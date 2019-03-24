@@ -16,3 +16,14 @@
 - 此工具大部分代码源自以下项目
   - [pinyinjs](https://github.com/sxei/pinyinjs)
   - [sensitive-word-filter](https://github.com/gaohuifeng/sensitive-word-filter)
+  
+## todos
+
+- 更完整的词库
+  - construct by differentiating two set of corpora.
+  - differentiate word frequency
+- 混合方案增强可读性
+  - 形近字
+  - 只替换单个字
+  - 和制汉字
+- PWA
