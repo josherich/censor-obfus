@@ -1,0 +1,54 @@
+<!doctype html>
+<style type="text/css">
+	#mainPopup {
+		padding: 10px;
+		height: 200px;
+		width: 400px;
+		font-family: Helvetica, Ubuntu, Arial, sans-serif;
+	}
+  #title {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    text-align: right;
+    color: #ddd;
+  }
+  #input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+  }
+  #input:focus {
+    border: 1px solid #aaa;
+    outline: none;
+  }
+  #show:focus {
+     border: none;
+     outline: none;
+   }
+  #show {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: none;
+  }
+  #copied {
+    display: none;
+    font-weight: 500;
+    text-align: right;
+    margin: 8px 0;
+  }
+</style>
+
+<div id="mainPopup">
+  <div id="title">censor-obfus</div>
+  <textarea id="input" rows="10" placeholder="input text..."></textarea>
+  <textarea id="show" rows="5" placeholder="obfuscated text..."></textarea>
+  <div id="copied">Copied to Clipboard.</div>
+</div>
+
+<script src="app.js"></script>
