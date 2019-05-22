@@ -72,6 +72,10 @@ function filter(s, cb) {
         subs[i] = cands[0]
         continue
       }
+      if (cands.length == 0) {
+        subs[i] = "_"
+        continue
+      }
       let res = cands[Math.min(getRandomInt(5), cands.length-1)]
       while (res == sWord[i]) {
         res = cands[Math.min(getRandomInt(5), cands.length-1)]

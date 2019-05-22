@@ -13,5 +13,5 @@ chrome.extension.onMessage.addListener(
   });
 
 function transform(input) {
-  return filter(input)['text'];
+  return filter(input);
 }

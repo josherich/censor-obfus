@@ -11,7 +11,7 @@
     font-size: 1.2em;
     margin-bottom: 5px;
     text-align: right;
-    color: #ddd;
+    color: #aaa;
   }
   #input {
     box-sizing: border-box;
@@ -42,13 +42,40 @@
     text-align: right;
     margin: 8px 0;
   }
+  #copy {
+    display: none;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    color: #aaa;
+    margin: 8px 0;
+    padding: 5px 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .toggles {
+    text-align: left;
+  }
+  .word-toggle {
+    display: inline-block;
+    margin-right: 20px;
+  }
 </style>
+
+<div class="templates" style="display: none;">
+  <div class="word-toggle">
+    <input type="checkbox" id="" name="">
+    <label for=""></label>
+  </div>
+</div>
 
 <div id="mainPopup">
   <div id="title">censor-obfus</div>
   <textarea id="input" rows="10" placeholder="input text..."></textarea>
+  <div class="toggles"></div>
   <textarea id="show" rows="5" placeholder="obfuscated text..."></textarea>
   <div id="copied">Copied to Clipboard.</div>
+  <div id="copy">Copy</div>
 </div>
 
 <script src="app.js"></script>

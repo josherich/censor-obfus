@@ -16,8 +16,12 @@
 - 此工具大部分代码源自以下项目
   - [pinyinjs](https://github.com/sxei/pinyinjs)
   - [sensitive-word-filter](https://github.com/gaohuifeng/sensitive-word-filter)
-  
-## todos
+
+## Updates
+
+- **New:** 2019-05-22 Added [Chrome Extension](https://chrome.google.com/webstore/detail/censor-obfus/nlbfgoikjbcngfplmdbphihddnidcplk?hl=en&gl=US&authuser=0)
+
+## TODOs
 
 - 更完整的词库
   - construct by differentiating two set of corpora.
@@ -27,3 +31,7 @@
   - 只替换单个字
   - 和制汉字
 - PWA
+
+## License
+
+`censor-obfus` is released under the MIT license. See [LICENSE](LICENSE) for additional details.
