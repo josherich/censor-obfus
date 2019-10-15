@@ -89,11 +89,12 @@
         }
       }
       document.querySelector('#input_text').value = demo
-      window.setTimeout(function() {
+      
+      loadKeywords().then(x => {
         let res = filter(demo)
         document.querySelector('#output_text').textContent = res['text']
         renderToggles(res['pairs'])
-      }, 2000)
+      })
 
       document.querySelector('#input_text').addEventListener('keyup', function(e) {
         let res = filter(e.target.value)

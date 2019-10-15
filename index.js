@@ -3,7 +3,8 @@ let pairs = {}
 let polyphone = false
 let anchor = ''
 
-fetch('./keywords.txt')
+function loadKeywords() {
+  return fetch('./keywords.txt')
   .then(response => response.text())
   .then((text) => {
     let lines = text.split('\n')
@@ -11,6 +12,7 @@ fetch('./keywords.txt')
       addWord(line)
     })
   })
+}
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
