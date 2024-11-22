@@ -1,7 +1,7 @@
 {
   "name": "censor-obfus",
-  "version": "0.0.1",
-  "manifest_version": 2,
+  "version": "0.0.2",
+  "manifest_version": 3,
   "description": "敏感词替换混淆 - 用同音字替换敏感词",
   "homepage_url": "https://github.com/josherich/censor-obfus",
   "icons": {
@@ -11,10 +11,10 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": true
+    "service_worker": "src/app.js",
+    "type": "module"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "icons/icon19.png",
     "default_title": "",
     "default_popup": "src/browser_action/browser_action.html"

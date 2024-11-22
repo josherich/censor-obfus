@@ -1,4 +1,6 @@
-let map = {}
+import { pinyinUtil } from './pinyinUtil.js'
+
+let kwTrieMap = {}
 let pairs = {}
 let polyphone = false
 let anchor = ''
@@ -17,7 +19,7 @@ function getRandomInt(max) {
 }
 
 function addWord(word) {
-  let parent = map
+  let parent = kwTrieMap
 
   for (let i = 0; i < word.length; i++) {
     if (!parent[word[i]]) parent[word[i]] = {}
@@ -27,7 +29,7 @@ function addWord(word) {
 }
 
 function filter(s, cb) {
-  let parent = map
+  let parent = kwTrieMap
   pairs = {}
   for (let i = 0; i < s.length; i++) {
     if (s[i] == '*') {
@@ -41,10 +43,9 @@ function filter(s, cb) {
     for (let j = i; j < s.length; j++) {
 
       if (!parent[s[j]]) {
-        // console.log('skip ', s[j])
         found = false
         skip = j - i
-        parent = map
+        parent = kwTrieMap
         break;
       }
 
@@ -92,7 +93,7 @@ function filter(s, cb) {
 
   }
 
-  if(typeof cb === 'function'){
+  if (typeof cb === 'function'){
     cb(null, s)
   }
 
@@ -101,3 +102,24 @@ function filter(s, cb) {
     pairs: pairs
   }
 }
+
+function transform(input) {
+  return filter(input);
+}
+
+// chrome.runtime.onMessage.addListener(
+//   function(request, sender, sendResponse) {
+//     console.log('listenr', request.value);
+//   	chrome.action.show(sender.tab.id);
+//     sendResponse();
+//   }
+// );
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+  	if (request.value) {
+      console.log('listenr', transform(request.value));
+      sendResponse(transform(request.value));
+    }
+  }
+);

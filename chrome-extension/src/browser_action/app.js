@@ -43,9 +43,12 @@ copy.addEventListener('click', function(e) {
   }, 3000)
 })
 
-input.addEventListener('keyup', function(e) {
+input.addEventListener('keyup', async function(e) {
+  const [tab] = await chrome.tabs.query({active: true, lastFocusedWindow: true});
+  console.log(tab)
 
-  var result = bg.transform(input.value)
+  const response = await chrome.runtime.sendMessage({ value: input.value });
+  const result = response;
   console.log(result)
   show.value = result['text']
 
@@ -61,6 +64,4 @@ input.addEventListener('keyup', function(e) {
     copied.style.display = 'none'
     copy.style.display = 'block'
   }, 3000)
-
-
-})
+});
