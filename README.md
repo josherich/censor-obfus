@@ -21,6 +21,7 @@
 
 ## Updates
 
+- 2024-11-22 Updated removed [Chrome Extension](https://chrome.google.com/webstore/detail/censor-obfus/nlbfgoikjbcngfplmdbphihddnidcplk?hl=en&gl=US&authuser=0) to Manifest V3
 - **New:** 2019-05-22 Added [Chrome Extension](https://chrome.google.com/webstore/detail/censor-obfus/nlbfgoikjbcngfplmdbphihddnidcplk?hl=en&gl=US&authuser=0)
 
 ## TODOs
